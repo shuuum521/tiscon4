@@ -133,7 +133,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>ご住所（全角）</label>
+                                    <label>ご住所</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
@@ -178,6 +178,7 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
                                     <label>メールアドレス（半角）</label>
@@ -186,13 +187,31 @@
                                 <td>
                                     <p>例：tiscon@example.com</p>
                                     <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
-                                        <p th:if="${errors.hasError('emailAddress')}"
-                                           th:text="${errors.getMessage('emailAddress')}" class="error-message">
+                                        <input type="text" name="emailAddress1" th:value="${form.emailAddress1}"/>
+                                        <p th:if="${errors.hasError('emailAddress1')}"
+                                           th:text="${errors.getMessage('emailAddress1')}" class="error-message">
                                         </p>
                                     </div>
                                 </td>
+
                             </tr>
+                            <tr>
+                                <td>
+                                    <label>確認用メールアドレス（半角）</label>
+                                    <p style="color:red;">＊</p>
+                                </td>
+                                <td>
+                                    <p>上記と同じメールアドレス</p>
+                                    <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
+                                        <input type="text" name="emailAddress2" th:value="${form.emailAddress2}"/>
+                                        <p th:if="${errors.hasError('emailAddress2')}"
+                                           th:text="${errors.getMessage('emailAddress2')}" class="error-message">
+                                        </p>
+                                    </div>
+                                </td>※
+
+                            </tr>
+
                             <tr>
                                 <td>
                                     <label>配偶者有無</label>

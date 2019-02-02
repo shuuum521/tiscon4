@@ -24,12 +24,8 @@ public enum GenderType implements CodeEnum {
     }
 
     @Override
-    public String getLabel() {
-        return label;
-    }
+    public String getLabel() {return label;}
 
     @Override
-    public String getCode() {
-        return code;
-    }
+    public String getCode() {return code;}
 }

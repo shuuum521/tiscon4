@@ -44,6 +44,31 @@
         </property>
     </component>
 
+    <component name="全角半角文字" class="nablarch.core.validation.validator.unicode.CompositeCharsetDef">
+        <property name="charsetDefList">
+            <list>
+                <component-ref name="第1水準漢字"/>
+                <component-ref name="全角ひらがな"/>
+                <component-ref name="全角カタカナ"/>
+                <component-ref name="第2水準漢字"/>
+                <component-ref name="全角英字"/>
+                <component-ref name="全角数字"/>
+                <component-ref name="第1水準全角記号"/>
+                <component-ref name="全角スペース"/>
+                <component-ref name="全角罫線"/>
+                <component-ref name="全角ギリシャ文字"/>
+                <component-ref name="全角ロシア文字"/>
+                <component-ref name="NEC選定IBM拡張"/>
+                <component-ref name="NEC特殊文字"/>
+                <component-ref name="IBM拡張文字"/>
+                <component-ref name="半角数字"/>
+                <component-ref name="半角英小文字"/>
+                <component-ref name="半角英大文字"/>
+                <component-ref name="ASCII記号"/>
+            </list>
+        </property>
+    </component>
+
     <!-- 半角英字 -->
     <component name="半角英字" class="nablarch.core.validation.validator.unicode.CompositeCharsetDef">
         <property name="charsetDefList">
