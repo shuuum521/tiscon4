@@ -120,13 +120,13 @@
 
                             <tr>
                                 <td>
-                                    <label>郵便番号</label>
+                                    <label>郵便番号(半角, ハイフンあり)</label>
                                     <p style="color:red;">＊</p>
                                     <label>ご住所</label>
                                     <p style="color:red;">＊</p>　<!--青柳変更-->
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
+                                    <p>例：160-0023</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
                                         <input type="text" class="zipcode" name="zipCode" size="10" maxlength="8"
                                                onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"
