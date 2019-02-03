@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajaxzip3.github.io/ajaxzip3.js"></script> <!--青柳変更-->
 <head>
     <title>お勤め先の入力</title>
 
@@ -38,7 +39,7 @@
                         </div>
 
                         <table class="ui celled table">
-                            <tbody>
+                            <tr>
                             <tr>
                                 <td>
                                     <label>お勤め先名</label>
@@ -53,25 +54,25 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
-                                    <label>お勤め先郵便番号（半角）</label>
+                                    <label>お勤め先郵便番号（半角, ハイフンあり）</label>
+                                    <p style="color:red;">＊</p>
+                                    <label>お勤め先ご住所</label>
+                                    <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
+                                    <p>例：160-0023</p>
                                     <div class="field" th:classappend="${errors.hasError('employerZipCode')} ? 'error'">
-                                        <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                                        <input type="text" class="zipcode" name="employerZipCode" size="10" maxlength="8"
+                                               onKeyUp="AjaxZip3.zip2addr(this,'','employerAddress','employerAddress');"
+                                               th:value="${form.employerZipCode}">　<!--青柳変更-->
                                         <p th:if="${errors.hasError('employerZipCode')}"
                                            th:text="${errors.getMessage('employerZipCode')}" class="error-message">
                                         </p>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="white-space: nowrap;">
-                                    <label>お勤め先住所</label>
-                                </td>
-                                <td>
+
                                     <p>例：東京都新宿区西新宿８－１７－１</p>
                                     <div class="field" th:classappend="${errors.hasError('employerAddress')} ? 'error'">
                                         <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
@@ -81,6 +82,7 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
                                     <label>お勤め先電話番号（半角）</label>
