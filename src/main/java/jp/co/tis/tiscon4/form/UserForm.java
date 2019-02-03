@@ -60,8 +60,13 @@ public class UserForm implements Serializable {
 
     /** メールアドレス */
     @Required
-    @Domain("emailAddress")
-    private String emailAddress;
+    @Domain("emailAddress1")
+    private String emailAddress1;
+
+    /** 確認用メールアドレス */
+    @Required
+    @Domain("emailAddress2")
+    private String emailAddress2;
 
     /** 配偶者有無 */
     @Required
@@ -163,12 +168,18 @@ public class UserForm implements Serializable {
         this.mobilePhoneNumber = mobilePhoneNumber;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmailAddress1() {
+        return emailAddress1;
+    }
+    public String getEmailAddress2() {
+        return emailAddress2;
+    }
+    public void setEmailAddress1(String emailAddress1) {
+        this.emailAddress1 = emailAddress1;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmailAddress2(String emailAddress2) {
+        this.emailAddress2 = emailAddress2;
     }
 
     public String getMarried() {
