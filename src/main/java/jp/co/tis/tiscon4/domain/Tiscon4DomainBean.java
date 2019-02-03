@@ -67,7 +67,12 @@ public class Tiscon4DomainBean {
     /** メールアドレス */
     @MailAddress()
     @Length(max = 255)
-    private String emailAddress;
+    private String emailAddress1;
+
+    /** 確認用メールアドレス */
+    @MailAddress()
+    @Length(max = 255)
+    private String emailAddress2;
 
     /** 配偶者有無 */
     @CodeValue(enumClass = MarriedType.class)
