@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajaxzip3.github.io/ajaxzip3.js"></script> <!--青柳変更-->
 <head>
     <title>ご本人情報の入力</title>
 
@@ -116,36 +117,35 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
-                                    <label>郵便番号（半角）</label>
+                                    <label>郵便番号</label>
                                     <p style="color:red;">＊</p>
+                                    <label>ご住所</label>
+                                    <p style="color:red;">＊</p>　<!--青柳変更-->
                                 </td>
                                 <td>
                                     <p>例：123-4567</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
-                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                        <input type="text" class="zipcode" name="zipCode" size="10" maxlength="8"
+                                               onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"
+                                               th:value="${form.zipCode}">　<!--青柳変更-->
                                         <p th:if="${errors.hasError('zipCode')}"
                                            th:text="${errors.getMessage('zipCode')}" class="error-message">
                                         </p>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>ご住所</label>
-                                    <p style="color:red;">＊</p>
-                                </td>
-                                <td>
+
                                     <p>例：東京都新宿区西新宿８－１７－１</p>
                                     <div class="field" th:classappend="${errors.hasError('address')} ? 'error'">
-                                        <input type="text" name="address" th:value="${form.address}"/>
+                                        <input type="text" name="address" size="60" th:value="${form.address}"/> <!--青柳変更-->
                                         <p th:if="${errors.hasError('address')}"
                                            th:text="${errors.getMessage('address')}" class="error-message">
                                         </p>
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
                                     <label>自宅電話番号（半角）</label>
@@ -193,7 +193,6 @@
                                         </p>
                                     </div>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td>
@@ -201,14 +200,14 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>上記と同じメールアドレス</p>
+                                    <p>上記と同じメールアドレス(コピーペースト禁止)</p>
                                     <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
                                         <input type="text" name="emailAddress2" th:value="${form.emailAddress2}"/>
                                         <p th:if="${errors.hasError('emailAddress2')}"
                                            th:text="${errors.getMessage('emailAddress2')}" class="error-message">
                                         </p>
                                     </div>
-                                </td>※
+                                </td>
 
                             </tr>
 
