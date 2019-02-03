@@ -250,12 +250,30 @@
                                 <td>
                                     <div th:each="item : ${jobTypes}" class="field"
                                          th:classappend="${errors.hasError('job')} ? 'error'">
+                                        <!--
                                         <input type="radio" name="job" th:value="${item.code}" th:text="${item.label}"
                                                th:field="*{job}" th:checked="${form.job}==${item.code}"/>
+                                        -->
                                     </div>
+
+                                    <select name="job">
+                                        <option value="">ご職業</option>
+                                        <option value="経営自営">経営・自営業</option>
+                                        <option value="会社員">会社員</option>
+                                        <option value="契約派遣">契約・派遣社員</option>
+                                        <option value="公務員">公務員</option>
+                                        <option value="民間団体">民間団体</option>
+                                        <option value="主婦">主婦</option>
+                                        <option value="学生">学生</option>
+                                        <option value="年金受給">年金受給者の方</option>
+                                        <option value="パートアルバイト">パート・アルバイト</option>
+                                        <option value="他有職">その他（有職）</option>
+                                        <option value="他無職">その他（無職）</option>
+                                    </select>
+
+
                                     <p th:if="${errors.hasError('job')}" th:text="${errors.getMessage('job')}"
                                        class="error-message">
-                                    </p>
                                 </td>
                             </tr>
                             <tr>
